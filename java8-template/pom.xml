@@ -9,7 +9,9 @@
 	<name>java8-template</name>
 	<description>Mantenimiento opciones de menu y perfiles</description>
 	<properties>
-		<failOnMissingWebXml>false</failOnMissingWebXml> 
+		<failOnMissingWebXml>false</failOnMissingWebXml>
+		<log4j.version>2.11.2</log4j.version>
+        <disruptor.version>3.4.2</disruptor.version>
 	</properties>
 
 	<dependencies>
@@ -38,12 +40,30 @@
 			<version>3.0.0</version>
 		</dependency>
 
-		<dependency>
+<!--	<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
 			<version>1.2.17</version>
 		</dependency>
+-->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
 
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
+
+        <!-- https://logging.apache.org/log4j/2.x/manual/async.html -->
+        <dependency>
+            <groupId>com.lmax</groupId>
+            <artifactId>disruptor</artifactId>
+            <version>${disruptor.version}</version>
+        </dependency>
 		<dependency>
 			<groupId>commons-configuration</groupId>
 			<artifactId>commons-configuration</artifactId>
